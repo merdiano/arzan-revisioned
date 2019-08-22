@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use App\User;
-use Backpack\Base\app\Models\Traits\InheritsRelationsFromParentModel;
+use Tightenco\Parental\HasParentModel as InheritsRelationsFromParentModel;
 use Backpack\Base\app\Notifications\ResetPasswordNotification as ResetPasswordNotification;
 
 class BackpackUser extends User

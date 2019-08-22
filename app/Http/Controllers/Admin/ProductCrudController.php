@@ -35,7 +35,8 @@ class ProductCrudController extends CrudController
 
         // TODO: remove setFromDb() and manually define Fields and Columns
         //$this->crud->setFromDb();\
-
+        $this->crud->allowAccess('revisions');
+        $this->crud->with('revisionHistory');
          $this->crud->addColumns([
             ['name'=>'title','type'=>'text','label'=>'Title'],
             ['name'=>'description','type'=>'text','label'=>'Description'],

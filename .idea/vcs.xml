@@ -3,5 +3,16 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/arzan" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor123/league/flysystem" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor123/nesbot/carbon" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor123/symfony/console" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor123/symfony/debug" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor123/symfony/finder" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor123/symfony/http-foundation" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor123/symfony/http-kernel" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor123/symfony/process" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor123/symfony/routing" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor123/symfony/translation" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor123/symfony/var-dumper" vcs="Git" />
   </component>
 </project>

@@ -50,6 +50,8 @@ class OrderCrudController extends CrudController
         // add asterisk for fields that are required in OrderRequest
         $this->crud->setRequiredFields(StoreRequest::class, 'create');
         $this->crud->setRequiredFields(UpdateRequest::class, 'edit');
+        $this->crud->allowAccess('revisions');
+        $this->crud->with('revisionHistory');
     }
 
     public function store(StoreRequest $request)

@@ -7,7 +7,7 @@ use Backpack\CRUD\CrudTrait;
 
 class Product extends Model
 {
-    use CrudTrait;
+    use CrudTrait,\Venturecraft\Revisionable\RevisionableTrait;
 
     /*
     |--------------------------------------------------------------------------
@@ -139,7 +139,30 @@ public function setImagesAttribute($value)
         $this->uploadMultipleFilesToDisk($value, $attribute_name, $disk, $destination_path);
     }
 
+    /**
+     * Attempt to find the user id of the currently logged in user
+     * Supports Cartalyst Sentry/Sentinel based authentication, as well as stock Auth
+     **/
+    public function getSystemUserId()
+    {
+        //
 
+        try {
+            if (class_exists($class = '\SleepingOwl\AdminAuth\Facades\AdminAuth')
+                || class_exists($class = '\Cartalyst\Sentry\Facades\Laravel\Sentry')
+                || class_exists($class = '\Cartalyst\Sentinel\Laravel\Facades\Sentinel')
+            ) {
+                return ($class::check()) ? $class::getUser()->id : null;
+            } elseif (auth('backpack')->check()) {
+//                dd(auth('backpack')->user()->getAuthIdentifier());
+                return auth('backpack')->user()->getAuthIdentifier();
+            }
+        } catch (\Exception $e) {
+            return null;
+        }
+
+        return null;
+    }
 
 
 }

@@ -51,8 +51,6 @@ class AdminController extends Controller
             }
         ]);
 
-
-
         $this->data['categories'] = $query->get();
         //dd($this->data['categories']);
         return view('backpack::dashboard', $this->data);
